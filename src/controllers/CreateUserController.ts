@@ -13,9 +13,7 @@ class CreateUserController {
 
             return response.json(user);
         } catch (error) {
-            console.log(error);
-            response.statusCode = 400;
-            return response.json({ error: error.toString() });
+            return response.status(400).json({ error: error.message });
         }
 
     }
